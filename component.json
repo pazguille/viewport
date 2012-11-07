@@ -1,0 +1,13 @@
+{
+  "name": "viewport",
+  "repo": "pazguille/viewport",
+  "description": "Gets the dimensions of the Viewport",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
