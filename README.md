@@ -19,26 +19,24 @@ It's cross-broswer compatible:
 
 ## How-to
 First, add the following meta viewport:
+
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 Then, initialize the Viewport:
 ```js
 var Viewport = require('viewport'),
-	view = new Viewport();
+	vp = new Viewport();
 ```
 
 ## API
 
-### Dimensions
-Gets the viewport size.
-
-#### Viewport#width
+### Viewport#width
 Returns `width` of viewport.
 
-#### Viewport#height
+### Viewport#height
 Returns `height` of viewport.
 
-#### Viewport#calculateDimensions()
+### Viewport#calculateDimensions()
 Calculates/updates the dimensions values (`width` and `height`).
 
 ### Offset
@@ -47,12 +45,11 @@ WIP
 ### Scroll
 WIP
 
-### Orientation
-Detects the device orientation.
+### Viewport#orientation
+Returns the device orientation: `landscape` or `portrait`.
 
-#### Viewport#orientation
-
-#### Viewport#calculateOrientation()
+### Viewport#calculateOrientation()
+Calculates/updates the device orientation.
 
 ### Mouse Postition
 WIP
