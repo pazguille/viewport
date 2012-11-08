@@ -12,18 +12,19 @@ var Emitter = require('emitter'),
 	scrolled = false;
 
 function update() {
-	// No changing, no execution
+	// No changing, exit
 	if (!resized && !scrolled) { return; }
 
 	var eve = (resized) ? 'resize' : 'scroll';
 
-	// Updates viewport position
+	// Updates viewport
 	this.refresh();
 
 	// Change status
 	resized = false;
 	scrolled = false;
 
+	// Emits the current event
 	this.emit(eve);
 }
 
@@ -58,7 +59,6 @@ Viewport.prototype.init = function () {
 };
 
 Viewport.prototype.device = {};
-Viewport.prototype.document = {};
 Viewport.prototype.cordinate = {};
 
 Viewport.prototype.calculateDimensions = function () {
@@ -92,7 +92,7 @@ Viewport.prototype.calculateOffset = function () {
 };
 
 
-Viewport.prototype.calculateEventcoordinates = function (eve) {
+Viewport.prototype.calculateMousePostition = function (eve) {
 	// add support for touch events ==> eve.changedTouches;
 	var coordX = 0,
 		coordY = 0;
@@ -124,7 +124,7 @@ Viewport.prototype.inViewport = function (el) {
 	return (r.top > 0) && (r.right < this.width) && (r.bottom < this.height) && (r.left > 0);
 };
 
-Viewport.prototype.inVisible = function (el) {
+Viewport.prototype.isVisible = function (el) {
 	var r = el.getBoundingClientRect();
 
 	return (r.height >= this.top);

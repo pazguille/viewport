@@ -26,17 +26,17 @@
 		<div id="test"></div>
 		<script>
 			var Viewport = require('viewport'),
-				v = new Viewport();
+				viewport = new Viewport();
 
-			v.on('resize', function () {
+			viewport.on('resize', function () {
 				console.log(this);
 			});
 
-			v.on('bottom', function () {
+			viewport.on('bottom', function () {
 				console.log('Llego al bottom');
 			});
 
-			v.on('top', function () {
+			viewport.on('top', function () {
 				console.log('Llego al top');
 			});
 		</script>

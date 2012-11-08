@@ -1,17 +1,86 @@
 # Viewport Component
 
-Gets the dimensions of the Viewport and beyond
+The Viewport is a componente to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
+
+It's cross-broswer compatible:
+- Chrome
+- Firefox
+- Opera
+- Safari
+- IE9
+- IE8
+- IE7
+- Opera Mobile 12
+- Safari Mobile
 
 ## Installation
 
     $ component install pazguille/viewport
 
+## How-to
+First, add the following meta viewport:
+`<meta name="viewport" content="width=device-width,initial-scale=1.0">`
+
+Then, initialize the Viewport:
+```js
+var Viewport = require('viewport');
+
+var view = new Viewport();
+
+if (view.height > 800) {
+	// Some code here!
+}
+```
+
 ## API
 
-## Example
-```javascript
+### Dimensions
 
+#### Viewport#width
+Returns the viewport `width`
+```js
+view.width; // 1280
 ```
+
+#### Viewport#height
+Returns the viewport `.height`
+```js
+view.width; // 800
+```
+
+#### Viewport#calculateDimensions()
+Calculates/updates the dimensions values
+```js
+view.calculateDimensions();
+```
+
+### Offset
+WIP
+
+### Scroll
+WIP
+
+### Orientation
+WIP
+
+### Mouse Postition
+WIP
+
+### Device Dimensions
+WIP
+
+### inViewport
+WIP
+
+### isVisible
+WIP
+
+### Refresh
+WIP
+
+### Events
+WIP
+
 
 ## Contact
 - Guille Paz (Frontend developer - JavaScript developer | Web standards lover)
