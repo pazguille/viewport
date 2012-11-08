@@ -1,10 +1,20 @@
 {
   "name": "viewport",
   "repo": "pazguille/viewport",
-  "description": "Gets the dimensions of the Viewport",
+  "description": "Gets the dimensions of the Viewport and beyond",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {},
+  "author": "Guille Paz <guille87paz@gmail.com>",
+  "twitter": "@pazguille",
+  "keywords": [
+    "viewport",
+    "dimensions",
+    "device",
+    "window",
+    "coordinates"
+  ],
+  "dependencies": {
+    "component/emitter": "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [

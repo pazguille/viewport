@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Viewport Component</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style>
+			body {
+				height: 1200px;
+			}
+
+			#test {
+				background-color: #EEE;
+				width: 520px;
+				height: 150px;
+				border: 1px solid #BBB;
+				position: absolute;
+				top: 50px;
+				left: 10px;
+				padding: 10px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="../build/build.js"></script>
+		<div id="test"></div>
+		<script>
+			var Viewport = require('viewport'),
+				v = new Viewport();
+
+			v.on('resize', function () {
+				console.log(this);
+			});
+
+			v.on('bottom', function () {
+				console.log('Llego al bottom');
+			});
+
+			v.on('top', function () {
+				console.log('Llego al top');
+			});
+		</script>
+	</body>
+</html>
