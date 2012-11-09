@@ -9,36 +9,50 @@
 				height: 1200px;
 			}
 
-			#test {
+			#view {
 				background-color: #EEE;
 				width: 520px;
-				height: 150px;
+				height: 250px;
 				border: 1px solid #BBB;
 				position: absolute;
 				top: 50px;
 				left: 10px;
-				padding: 10px 20px;
+				/*padding: 10px 20px;*/
+				overflow: auto;
+			}
+
+			#content {
+				background-color: white;
+				width: 320px;
+				height: 1550px;
+				margin: 10px auto;
 			}
 		</style>
 	</head>
 	<body>
 		<script src="../build/build.js"></script>
-		<div id="test"></div>
+		<div id="view">
+			<div id="content"></div>
+		</div>
 		<script>
 			var Viewport = require('viewport'),
+				v = document.getElementById('view'),
+				c = document.getElementById('content'),
 				viewport = new Viewport();
 
-			viewport.on('resize', function () {
-				console.log(this);
-			});
-
-			viewport.on('bottom', function () {
-				console.log('Llego al bottom');
+			viewport.on('scroll', function () {
+				console.log(this.scrollY);
 			});
 
 			viewport.on('top', function () {
-				console.log('Llego al top');
+				console.log('Top');
 			});
+
+			viewport.on('bottom', function () {
+				console.log('Bottom');
+			});
+
+
 		</script>
 	</body>
 </html>

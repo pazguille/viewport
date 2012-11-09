@@ -15,7 +15,7 @@ It's cross-broswer compatible:
 
 ## Installation
 
-    $ component install pazguille/viewport
+	$ component install pazguille/viewport
 
 ## How-to
 First, add the following meta viewport:
@@ -31,45 +31,66 @@ var Viewport = require('viewport'),
 ## API
 
 ### Viewport#width
-Returns `width` of viewport.
+Returns the current `width` of viewport (in pixels).
 
 ### Viewport#height
-Returns `height` of viewport.
+Returns the current `height` of viewport (in pixels).
 
 ### Viewport#calculateDimensions()
-Calculates/updates the dimensions values (`width` and `height`).
+Calculates/updates the dimensions (`width` and `height`) of viewport (in pixels).
 
-### Offset
-WIP
+### Viewport#top
+Returns offset `top` of viewport.
 
-### Scroll
-WIP
+### Viewport#right
+Returns offset `right` of viewport.
+
+### Viewport#bottom
+Returns offset `bottom` of viewport.
+
+### Viewport#left
+Returns offset `left` of viewport.
+
+### Viewport#calculateOffset()
+Calculates/updates the viewport position.
+
+### Viewport#scrollY
+Returns vertical scroll position of viewport.
+
+### Viewport#scrollX
+Returns horizontal scroll position of viewport.
+
+### Viewport#calculateScroll()
+Calculates/updates the scroll positions (`scrollY` and `scrollX`) of viewport.
 
 ### Viewport#orientation
-Returns the device orientation: `landscape` or `portrait`.
+Rertuns the device orientation: `landscape` or `portrait`.
 
 ### Viewport#calculateOrientation()
-Calculates/updates the device orientation.
+Calculates/updates the device `orientation`.
 
-### Mouse Postition
-WIP
+### Viewport#calculateMousePostition()
+Gets the position of the mouse cursor in screen coordinates. Returns an object with the following properties:
+- `posY`: y coordinate of the mouse pointer.
+- `posX`: x coordinate of the mouse pointer.
 
-### Device Dimensions
-WIP
+### Viewport#device
+Device size is static and doesn't change when the page is resized. Returns an object with size of device (`width` and `height`).
 
-### inViewport
-WIP
+### Viewport#inViewport()
+Calculate if an element is completely located in the viewport. Returns boolean.
 
-### isVisible
-WIP
+### Viewport#isVisible()
+Calculates if an element is visible in the viewport. Returns boolean.
 
-### Refresh
-WIP
+### Viewport#refresh()
+Upadtes the viewport dimension, viewport positions and orietation.
 
 ### Events
-WIP
-
-## Examples
+- `scroll`: emited when the viewport are scrolled.
+- `resize`: emited when the dimensions of the viewport changes.
+- `bottom`: emited when the viewport position is the bottom.
+- `top`: emited when the viewport position is the top.
 
 ## Contact
 - Guille Paz (Frontend developer - JavaScript developer | Web standards lover)
