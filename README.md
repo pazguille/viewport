@@ -17,7 +17,7 @@ It's cross-broswer compatible:
 
 	$ component install pazguille/viewport
 
-See: [https://github.com/component/component](url=https://github.com/component/component)
+See: [https://github.com/component/component](https://github.com/component/component)
 
 ## How-to
 First, add the following meta viewport:
