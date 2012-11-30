@@ -4,36 +4,10 @@
 		<meta charset="utf-8" />
 		<title>Viewport Component</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<style>
-			body {
-				height: 1200px;
-			}
-
-			#view {
-				background-color: #EEE;
-				width: 520px;
-				height: 250px;
-				border: 1px solid #BBB;
-				position: absolute;
-				top: 50px;
-				left: 10px;
-				/*padding: 10px 20px;*/
-				overflow: auto;
-			}
-
-			#content {
-				background-color: white;
-				width: 320px;
-				height: 1550px;
-				margin: 10px auto;
-			}
-		</style>
 	</head>
 	<body>
+		<h1>Please, open your Console!</h1>
 		<script src="../build/build.js"></script>
-		<div id="view">
-			<div id="content"></div>
-		</div>
 		<script>
 			var Viewport = require('viewport'),
 				v = document.getElementById('view'),
@@ -51,8 +25,6 @@
 			viewport.on('bottom', function () {
 				console.log('Bottom');
 			});
-
-
 		</script>
 	</body>
 </html>
