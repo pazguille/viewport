@@ -21,9 +21,9 @@ See: [https://github.com/component/component](https://github.com/component/compo
 
 ## How-to
 First, add the following meta viewport:
-
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+```
 Then, initialize the Viewport:
 ```js
 var Viewport = require('viewport'),
