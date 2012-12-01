@@ -1,6 +1,6 @@
 # Viewport Component
 
-The Viewport is a componente to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
+The Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
 
 It's cross-broswer compatible:
 - Chrome
