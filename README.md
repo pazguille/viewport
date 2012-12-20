@@ -1,6 +1,6 @@
 # Viewport Component
 
-The Viewport is a componente to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
+The Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
 
 It's cross-broswer compatible:
 - Chrome
@@ -21,9 +21,9 @@ See: [https://github.com/component/component](https://github.com/component/compo
 
 ## How-to
 First, add the following meta viewport:
-
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+```
 Then, initialize the Viewport:
 ```js
 var Viewport = require('viewport'),
