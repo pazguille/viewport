@@ -1,8 +1,8 @@
 # Viewport Component
 
-The Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
+Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
 
-It's cross-broswer compatible:
+It's cross-browser compatible:
 - Chrome
 - Firefox
 - Opera
@@ -66,7 +66,7 @@ Returns horizontal scroll position of viewport.
 Calculates/updates the scroll positions (`scrollY` and `scrollX`) of viewport.
 
 ### Viewport#orientation
-Rertuns the device orientation: `landscape` or `portrait`.
+Returns the device orientation: `landscape` or `portrait`.
 
 ### Viewport#calculateOrientation()
 Calculates/updates the device `orientation`.
@@ -86,13 +86,13 @@ Calculate if an element is completely located in the viewport. Returns boolean.
 Calculates if an element is visible in the viewport. Returns boolean.
 
 ### Viewport#refresh()
-Upadtes the viewport dimension, viewport positions and orietation.
+Updates the viewport dimension, viewport positions and orientation.
 
 ### Events
-- `scroll`: emited when the viewport are scrolled.
-- `resize`: emited when the dimensions of the viewport changes.
-- `bottom`: emited when the viewport position is the bottom.
-- `top`: emited when the viewport position is the top.
+- `scroll`: emitted when the viewport are scrolled.
+- `resize`: emitted when the dimensions of the viewport changes.
+- `bottom`: emitted when the viewport position is the bottom.
+- `top`: emitted when the viewport position is the top.
 
 ## Contact
 - Guille Paz (Frontend developer - JavaScript developer | Web standards lover)
