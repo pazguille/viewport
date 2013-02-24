@@ -2,7 +2,7 @@
   "name": "viewport",
   "repo": "pazguille/viewport",
   "description": "Gets the dimensions of the Viewport and beyond",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Guille Paz <guille87paz@gmail.com>",
   "twitter": "@pazguille",
   "keywords": [
