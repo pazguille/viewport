@@ -81,16 +81,20 @@
     };
 
     Viewport.prototype.calculateScroll = function () {
+        var cachedTop = this.scrollY,
+            cachedBottom = this.height + cachedTop,
+            bottom;
+
         this.scrollY = win.pageYOffset || docEl.scrollTop;
         this.scrollX = win.pageXOffset || docEl.scrollLeft;
+        bottom = this.height + this.scrollY;
 
-        if (this.scrollY === 0) {
+        if (cachedTop !== this.scrollY && this.scrollY === 0) {
             this.emit('top');
 
-        } else if ((this.height + this.scrollY) >= doc.body.scrollHeight) {
+        } else if (cachedBottom !== bottom && bottom >= doc.body.scrollHeight) {
             this.emit('bottom');
         }
-
     };
 
     Viewport.prototype.calculateOffset = function () {
