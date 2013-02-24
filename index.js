@@ -15,7 +15,7 @@ function update() {
     // No changing, exit
     if (!resized && !scrolled) { return; }
 
-    var eve = (resized) ? 'resize' : 'scroll';
+    var eve = resized ? 'resize' : 'scroll';
 
     // Updates viewport
     this.refresh();
@@ -42,8 +42,9 @@ function Viewport() {
     // Singleton pattern
     if (!(this instanceof Viewport) && Viewport.getInstance === undefined) {
         return new Viewport();
+    }
 
-    } else if (Viewport.getInstance) {
+    if (Viewport.getInstance) {
         return Viewport.getInstance;
     }
 

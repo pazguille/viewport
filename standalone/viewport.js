@@ -18,7 +18,7 @@
         // No changing, exit
         if (!resized && !scrolled) { return; }
 
-        var eve = (resized) ? 'resize' : 'scroll';
+        var eve = resized ? 'resize' : 'scroll';
 
         // Updates viewport
         this.refresh();
@@ -41,6 +41,16 @@
      * Viewport
      */
     function Viewport() {
+
+        // Singleton pattern
+        if (!(this instanceof Viewport) && Viewport.getInstance === undefined) {
+            return new Viewport();
+        }
+
+        if (Viewport.getInstance) {
+            return Viewport.getInstance;
+        }
+
         this.init();
     }
 
@@ -141,13 +151,13 @@
      */
     // AMD suppport
     if (typeof window.define === 'function' && window.define.amd !== undefined) {
-        window.define('Viewport', [], function () {
-            return Viewport;
+        window.define('viewport', [], function () {
+            return new Viewport();
         });
 
     // CommonJS suppport
     } else if (typeof module !== 'undefined' && module.exports !== undefined) {
-        module.exports = Viewport;
+        module.exports = new Viewport();
 
     // Default
     } else {
