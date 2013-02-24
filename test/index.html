@@ -4,16 +4,24 @@
 		<meta charset="utf-8" />
 		<title>Viewport Component</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style>
+			body {
+				height: 1200px;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Please, open your Console!</h1>
+		<h1>Please, start to scroll and resize the viewport!</h1>
 		<script src="../build/build.js"></script>
 		<script>
-			var Viewport = require('viewport'),
-				viewport = new Viewport();
+			var viewport = require('viewport');
 
 			viewport.on('scroll', function () {
-				console.log(this.scrollY);
+				console.log('Scrolling');
+			});
+
+			viewport.on('resize', function () {
+				console.log('Resizing');
 			});
 
 			viewport.on('top', function () {

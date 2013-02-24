@@ -26,8 +26,11 @@ First, add the following meta viewport:
 ```
 Then, initialize the Viewport:
 ```js
-var Viewport = require('viewport'),
-	vp = new Viewport();
+var viewport = require('viewport');
+```
+Now, starts to use it!
+```js
+viewport.height // Returns the current height of the viewport. (Read below the API)
 ```
 
 ## API

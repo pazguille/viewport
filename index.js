@@ -38,6 +38,15 @@ on(SCROLL, function () { scrolled = true; });
  * Viewport
  */
 function Viewport() {
+
+    // Singleton pattern
+    if (!(this instanceof Viewport) && Viewport.getInstance === undefined) {
+        return new Viewport();
+
+    } else if (Viewport.getInstance) {
+        return Viewport.getInstance;
+    }
+
     this.init();
 }
 
@@ -52,6 +61,8 @@ Viewport.prototype.init = function () {
     win.setInterval(function () {
         update.call(that);
     }, 350);
+
+    Viewport.getInstance = this;
 };
 
 Viewport.prototype.device = {};
@@ -136,4 +147,4 @@ Viewport.prototype.refresh = function () {
 /**
  * Expose Viewport
  */
-exports = module.exports = Viewport;
+exports = module.exports = new Viewport();
