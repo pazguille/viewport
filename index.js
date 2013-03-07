@@ -67,7 +67,6 @@ Viewport.prototype.init = function () {
 };
 
 Viewport.prototype.device = {};
-Viewport.prototype.cordinate = {};
 
 Viewport.prototype.calculateDimensions = function () {
     this.height = docEl.clientHeight;
