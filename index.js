@@ -1,3 +1,4 @@
+
 /**
  * Module dependencies.
  */
@@ -35,7 +36,7 @@ on(RESIZE, function () { resized = true; });
 on(SCROLL, function () { scrolled = true; });
 
 /**
- * Viewport
+ * Viewport class
  */
 function Viewport() {
 
@@ -125,13 +126,16 @@ Viewport.prototype.calculateMousePostition = function (eve) {
 };
 
 Viewport.prototype.calculateOrientation = function () {
-    this.orientation = (Math.abs(win.orientation) === 90) ? 'landscape' : 'portrait';
+    this.orientation = (Math.abs(win.orientation) === 90)
+        ? 'landscape'
+        : 'portrait';
 };
 
 Viewport.prototype.inViewport = function (el) {
     var r = el.getBoundingClientRect();
 
-    return (r.top > 0) && (r.right < this.width) && (r.bottom < this.height) && (r.left > 0);
+    return (r.top > 0) && (r.right < this.width)
+        && (r.bottom < this.height) && (r.left > 0);
 };
 
 Viewport.prototype.isVisible = function (el) {
