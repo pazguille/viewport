@@ -13,7 +13,7 @@ var Emitter = require('emitter'),
 
 function update() {
     // No changing, exit
-    if (!resized && !scrolled) { return; }
+    if (!resized && !scrolled) { return; }
 
     var eve = resized ? 'resize' : 'scroll';
 
@@ -103,13 +103,12 @@ Viewport.prototype.calculateOffset = function () {
     this.left = this.scrollX;
 };
 
-
 Viewport.prototype.calculateMousePostition = function (eve) {
     // add support for touch events ==> eve.changedTouches;
     var coordX = 0,
         coordY = 0;
 
-    eve = eve || window.event;
+    eve = eve || window.event;
 
     if (eve.pageX || eve.pageY) {
         coordX = eve.pageX;
