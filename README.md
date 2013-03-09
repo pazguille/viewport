@@ -19,6 +19,12 @@ It's cross-browser compatible:
 
 See: [https://github.com/component/component](https://github.com/component/component)
 
+### Standalone
+Also, you can use it without components.
+```html
+<script src="../standalone/viewport.js"></script>
+```
+
 ## How-to
 First, add the following meta viewport:
 ```html
