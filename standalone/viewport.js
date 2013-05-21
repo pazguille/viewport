@@ -65,6 +65,8 @@
         win.setInterval(function () {
             update.call(that);
         }, 350);
+
+        Viewport.getInstance = this;
     };
 
     Viewport.prototype.device = {};
