@@ -13,7 +13,7 @@
     "coordinates"
   ],
   "dependencies": {
-    "component/emitter": "*"
+    "pazguille/jvent": "*"
   },
   "development": {},
   "license": "MIT",
