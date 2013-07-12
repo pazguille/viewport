@@ -1,15 +1,23 @@
 /**
  * Module dependencies.
  */
-var Emitter = require('emitter'),
-    win = window,
+var win = window,
     doc = win.document,
     docEl = doc.documentElement,
+    Jvent = require('jvent'),
     on = win.addEventListener || win.attachEvent,
-    RESIZE = (win.attachEvent) ? 'onresize' : 'resize',
-    SCROLL = (win.attachEvent) ? 'onscroll' : 'scroll',
+    RESIZE = (on === win.attachEvent) ? 'onresize' : 'resize',
+    SCROLL = (on === win.attachEvent) ? 'onscroll' : 'scroll',
     resized = false,
-    scrolled = false;
+    scrolled = false,
+    requestAnimFrame = (function () {
+        return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 1000 / 60);
+            };
+    }());
 
 function update() {
     // No changing, exit
@@ -34,6 +42,7 @@ function update() {
 on(RESIZE, function () { resized = true; });
 on(SCROLL, function () { scrolled = true; });
 
+
 /**
  * Viewport class
  */
@@ -49,9 +58,11 @@ function Viewport() {
     }
 
     this.init();
+
+    return this;
 }
 
-Emitter(Viewport.prototype);
+Viewport.prototype = new Jvent();
 
 Viewport.prototype.init = function () {
     var that = this;
@@ -59,11 +70,14 @@ Viewport.prototype.init = function () {
     that.refresh();
     that.calculateDeviceDimensions();
 
-    win.setInterval(function () {
+    (function updateloop() {
+        requestAnimFrame(updateloop);
         update.call(that);
-    }, 350);
+    }());
 
     Viewport.getInstance = this;
+
+    return this;
 };
 
 Viewport.prototype.device = {};
@@ -71,11 +85,15 @@ Viewport.prototype.device = {};
 Viewport.prototype.calculateDimensions = function () {
     this.height = docEl.clientHeight;
     this.width = docEl.clientWidth;
+
+    return this;
 };
 
 Viewport.prototype.calculateDeviceDimensions = function () {
     this.device.height = win.screen.height;
     this.device.width = win.screen.width;
+
+    return this;
 };
 
 Viewport.prototype.calculateScroll = function () {
@@ -93,6 +111,8 @@ Viewport.prototype.calculateScroll = function () {
     } else if (cachedBottom !== bottom && bottom >= doc.body.scrollHeight) {
         this.emit('bottom');
     }
+
+    return this;
 };
 
 Viewport.prototype.calculateOffset = function () {
@@ -100,6 +120,8 @@ Viewport.prototype.calculateOffset = function () {
     this.right = this.scrollX + this.width;
     this.bottom = this.scrollY + this.height;
     this.left = this.scrollX;
+
+    return this;
 };
 
 Viewport.prototype.calculateMousePostition = function (eve) {
@@ -122,19 +144,22 @@ Viewport.prototype.calculateMousePostition = function (eve) {
         'posX': coordX,
         'posY': coordY
     };
+
 };
 
 Viewport.prototype.calculateOrientation = function () {
     this.orientation = (Math.abs(win.orientation) === 90)
         ? 'landscape'
         : 'portrait';
+
+    return this;
 };
 
 Viewport.prototype.inViewport = function (el) {
     var r = el.getBoundingClientRect();
 
-    return (r.top > 0) && (r.right < this.width)
-        && (r.bottom < this.height) && (r.left > 0);
+    return (r.top >= 0) && (r.right <= this.width)
+        && (r.bottom <= this.height) && (r.left >= 0);
 };
 
 Viewport.prototype.isVisible = function (el) {
@@ -148,6 +173,8 @@ Viewport.prototype.refresh = function () {
     this.calculateScroll();
     this.calculateOffset();
     this.calculateOrientation();
+
+    return this;
 };
 
 /**
