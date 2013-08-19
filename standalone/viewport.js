@@ -170,7 +170,7 @@
     Viewport.prototype.isVisible = function (el) {
         var r = el.getBoundingClientRect();
 
-        return (r.height >= this.top);
+        return (r.bottom >= 0 && r.top <= this.height);
     };
 
     Viewport.prototype.refresh = function () {
