@@ -178,6 +178,11 @@ Viewport.prototype.refresh = function () {
 };
 
 /**
- * Expose Viewport
+ * Expose Viewport singleton instance
  */
 exports = module.exports = new Viewport();
+
+/**
+ * Expose Viewport class
+ */
+exports.Viewport = Viewport;
