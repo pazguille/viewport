@@ -1,5 +1,5 @@
 {
-  "name": "viewportjs",
+  "name": "viewport-js",
   "version": "1.0.0",
   "description": "Gets the dimensions of the Viewport and beyond.",
   "repository": "git@github.com:pazguille/viewport.git",

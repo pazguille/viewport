@@ -1,10 +1,10 @@
-# Viewport Component
+# Viewport
 
 Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
 
 ## Installation
 
-	$ npm install viewportjs
+	$ npm install viewport-js
 
 ### Standalone
 Also, you can use it without components.
