@@ -2,22 +2,9 @@
 
 Viewport is a component to ease viewport management. You can get the dimensions of the viewport and beyond, which can be quite helpful to perform some checks with JavaScript.
 
-It's cross-browser compatible:
-- Chrome
-- Firefox
-- Opera
-- Safari
-- IE9
-- IE8
-- IE7
-- Opera Mobile 12
-- Safari Mobile
-
 ## Installation
 
-	$ component install pazguille/viewport
-
-See: [https://github.com/component/component](https://github.com/component/component)
+	$ npm install viewportjs
 
 ### Standalone
 Also, you can use it without components.
@@ -25,7 +12,7 @@ Also, you can use it without components.
 <script src="../standalone/viewport.js"></script>
 ```
 
-## How-to
+## Usage
 First, add the following meta viewport:
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -38,6 +25,13 @@ Now, starts to use it!
 ```js
 viewport.height // Returns the current height of the viewport. (Read below the API)
 ```
+
+## Browser Support
+- Chrome (OS X, Windows)
+- Firefox (OS X, Windows)
+- Opera (OS X, Windows)
+- Safari (OS X, Windows)
+- IE10+
 
 ## API
 
@@ -75,15 +69,10 @@ Returns horizontal scroll position of viewport.
 Calculates/updates the scroll positions (`scrollY` and `scrollX`) of viewport.
 
 ### Viewport#orientation
-Returns the device orientation: `landscape` or `portrait`.
+Returns the device orientation: `portrait-primary`, `portrait-secondary`, `landscape-primary`, `landscape-secondary`.
 
 ### Viewport#calculateOrientation()
 Calculates/updates the device `orientation`.
-
-### Viewport#calculateMousePostition()
-Gets the position of the mouse cursor in screen coordinates. Returns an object with the following properties:
-- `posY`: y coordinate of the mouse pointer.
-- `posX`: x coordinate of the mouse pointer.
 
 ### Viewport#device
 Device size is static and doesn't change when the page is resized. Returns an object with size of device (`width` and `height`).
@@ -103,30 +92,22 @@ Updates the viewport dimension, viewport positions and orientation.
 - `bottom`: emitted when the viewport position is the bottom.
 - `top`: emitted when the viewport position is the top.
 
-## Contact
-- Guille Paz (Frontend developer - JavaScript developer | Web standards lover)
+## With :heart: by
+
+- Guille Paz (Frontend developer | Web standards lover)
 - E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
 - Twitter: [@pazguille](http://twitter.com/pazguille)
-- Web: [http://pazguille.me](http://pazguille.me)
+- Web: [https://pazguille.me](https://pazguille.me)
 
 ## License
-### The MIT License
-Copyright (c) 2012 [@pazguille](http://twitter.com/pazguille)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+MIT license. Copyright © 2016.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+[npm-image]: https://img.shields.io/npm/v/horwheel.svg
+[lic-image]: https://img.shields.io/npm/l/horwheel.svg
+[npm-link]: https://npmjs.org/package/horwheel
+[deps-image]: https://img.shields.io/david/pazguille/horwheel.svg
+[deps-link]: https://david-dm.org/pazguille/horwheel
+[devdeps-image]: https://img.shields.io/david/dev/pazguille/horwheel.svg
+[devdeps-link]: https://david-dm.org/pazguille/horwheel#info=devDependencies
+[dt-image]: https://img.shields.io/npm/dt/horwheel.svg
