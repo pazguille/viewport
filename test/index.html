@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Viewport Component</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.min.css">
     <style>
       body {
         height: 1200px;
@@ -12,25 +13,19 @@
   </head>
   <body>
     <h1>Please, open your console and start to scroll and resize the viewport!</h1>
-    <script src="../build/build.js"></script>
+    <div id="mocha"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.min.js"></script>
     <script>
-      var viewport = require('viewport');
-
-      viewport.on('scroll', function () {
-        console.log('Scrolling');
-      });
-
-      viewport.on('resize', function () {
-        console.log('Resizing');
-      });
-
-      viewport.on('top', function () {
-        console.log('Top');
-      });
-
-      viewport.on('bottom', function () {
-        console.log('Bottom');
-      });
+      mocha.setup('bdd');
+      var exports = null;
+      function assert(expr, msg) {
+        if (!expr) throw new Error(msg || 'failed');
+      }
+    </script>
+    <script>
+      window.onload = function() {
+        var runner = mocha.run();
+      };
     </script>
   </body>
 </html>
