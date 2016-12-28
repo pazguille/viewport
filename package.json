@@ -35,8 +35,5 @@
     "window",
     "coordinates"
   ],
-  "spm": {
-    "main": "index.js"
-  },
   "license": "MIT"
 }
