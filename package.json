@@ -1,0 +1,42 @@
+{
+  "name": "viewportjs",
+  "version": "1.0.0",
+  "description": "Gets the dimensions of the Viewport and beyond.",
+  "repository": "git@github.com:pazguille/viewport.git",
+  "author": "Guille Paz <guille87paz@gmail.com>",
+  "scripts": {
+    "build": "node browserify.js",
+    "dist": "npm run build && uglifyjs ./dist/viewport.js -m -o ./dist/viewport.min.js --source-map ./dist/viewport.min.js.map",
+    "test": "npm run build && NODE_ENV=test istanbul cover _mocha -- ./test/*.spec.js",
+    "lint": "eslint index.js"
+  },
+  "dependencies": {
+    "decouple": "1.0.0",
+    "jvent": "1.0.2"
+  },
+  "devDependencies": {
+    "better-assert": "1.0.2",
+    "browserify": "13.1.1",
+    "coveralls": "2.11.15",
+    "eslint": "3.12.2",
+    "eslint-config-airbnb-base": "11.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "istanbul": "0.4.5",
+    "jsdom": "9.9.1",
+    "mkdirp": "0.5.1",
+    "mocha": "3.2.0",
+    "uglify-js": "2.7.5"
+  },
+  "main": "index.js",
+  "keywords": [
+    "viewport",
+    "dimensions",
+    "device",
+    "window",
+    "coordinates"
+  ],
+  "spm": {
+    "main": "index.js"
+  },
+  "license": "MIT"
+}
