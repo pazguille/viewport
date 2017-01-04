@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "better-assert": "1.0.2",
-    "browserify": "13.1.1",
+    "browserify": "13.2.0",
     "coveralls": "2.11.15",
     "eslint": "3.12.2",
     "eslint-config-airbnb-base": "11.0.0",
