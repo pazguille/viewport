@@ -22,7 +22,7 @@
     "eslint-config-airbnb-base": "11.0.1",
     "eslint-plugin-import": "2.2.0",
     "istanbul": "0.4.5",
-    "jsdom": "9.9.1",
+    "jsdom": "9.10.0",
     "mkdirp": "0.5.1",
     "mocha": "3.2.0",
     "uglify-js": "2.7.5"
