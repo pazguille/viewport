@@ -11,7 +11,7 @@
     "lint": "eslint index.js"
   },
   "dependencies": {
-    "decouple": "1.0.0",
+    "decouple": "1.0.1",
     "jvent": "1.0.2"
   },
   "devDependencies": {
