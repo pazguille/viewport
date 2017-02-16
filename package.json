@@ -11,14 +11,14 @@
     "lint": "eslint index.js"
   },
   "dependencies": {
-    "decouple": "1.0.0",
+    "decouple": "1.0.1",
     "jvent": "1.0.2"
   },
   "devDependencies": {
     "better-assert": "1.0.2",
-    "browserify": "13.2.0",
+    "browserify": "14.1.0",
     "coveralls": "2.11.15",
-    "eslint": "3.13.1",
+    "eslint": "3.14.1",
     "eslint-config-airbnb-base": "11.1.0",
     "eslint-plugin-import": "2.2.0",
     "istanbul": "0.4.5",
