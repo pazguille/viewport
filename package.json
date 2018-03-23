@@ -24,7 +24,7 @@
     "istanbul": "0.4.5",
     "jsdom": "9.11.0",
     "mkdirp": "0.5.1",
-    "mocha": "3.2.0",
+    "mocha": "5.0.5",
     "uglify-js": "2.7.5"
   },
   "main": "index.js",
