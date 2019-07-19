@@ -20,7 +20,7 @@
     "coveralls": "2.11.16",
     "eslint": "3.14.1",
     "eslint-config-airbnb-base": "11.1.0",
-    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-import": "2.18.1",
     "istanbul": "0.4.5",
     "jsdom": "9.11.0",
     "mkdirp": "0.5.1",
